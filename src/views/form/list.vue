@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <search :searchParams="searchParams" @search="onSearch"></search>
-    <div class="operation-box">
+    <div class="form-box">
       <Button type="primary" size="small" :to="'add'">添加Banner</Button>
     </div>
     <Row class="table" v-if="list">
@@ -133,7 +133,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.operation-box {
+.form-box {
   margin-bottom: 15px;
 }
 img {

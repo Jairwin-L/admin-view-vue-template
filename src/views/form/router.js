@@ -1,4 +1,4 @@
-const prePath = '/operation/banner/'
+const prePath = '/form/'
 const router = [
   {
     path: 'list',

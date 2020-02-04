@@ -46,16 +46,9 @@ export default {
     onChangePassword (name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          if (this.formValidate.old_password === this.formValidate.new_password) {
-            this.$Message.warning('新旧密码一致')
-            return
-          }
-          if (this.formValidatethis.formValidate.new_password_confirm !== this.formValidate.new_password) {
-            this.$Message.warning('两次填写的密码不一致')
-            return
-          }
+          console.log(this.formValidate)
+          this.$router.push('../main')
         }
-        console.log(this.formValidate)
       })
     }
   }

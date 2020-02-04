@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-if="show">
+  <div id="app">
     <transition name="fade" :duration="100" mode="out-in">
       <router-view/>
     </transition>
@@ -8,12 +8,7 @@
 
 <script>
 export default {
-  name: 'app',
-  data () {
-    return {
-      show: true
-    }
-  }
+  name: 'app'
 }
 </script>
 <style lang="less">

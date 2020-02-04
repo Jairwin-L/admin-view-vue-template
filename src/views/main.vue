@@ -17,7 +17,7 @@
               <Icon type="ios-stats"/>
               <span v-if="!isCollapsed">Form</span>
             </template>
-            <MenuItem to="/operation/list" name="/operation/list">
+            <MenuItem to="/form/list" name="/form/list">
               <span>列表</span>
             </MenuItem>
           </Submenu>
@@ -42,16 +42,21 @@
           </Dropdown>
         </Header>
         <Content :style="{background: '#F0F2F5', minHeight: '260px'}">
-           <transition name="fade" :duration="100" mode="out-in">
+          <transition name="fade" :duration="100" mode="out-in">
             <router-view/>
           </transition>
+          <footers></footers>
         </Content>
       </Layout>
     </Layout>
   </div>
 </template>
 <script>
+import Footers from '../components/footer'
 export default {
+  components: {
+    Footers
+  },
   data () {
     return {
       menus: [],
