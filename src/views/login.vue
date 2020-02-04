@@ -48,7 +48,7 @@ export default {
     onLogin (name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$router.push({ name: 'Welcome' })
+          this.$router.push('/main')
         }
       })
     }

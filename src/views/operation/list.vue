@@ -18,7 +18,6 @@
           <template slot-scope="{ row }" slot="title">{{ row.title || '暂未设置'}}</template>
           <template slot-scope="{ row }" slot="action">
             <Button type="primary" size="small" ghost style="margin-right: 10px;" :to="`edit/${row.id}`">编辑</Button>
-            <Button type="info" size="small" ghost style="margin-right: 10px;" @click="onSwitchClone(row)">克隆</Button>
             <Button type="error" size="small" ghost @click="onSwitchDel(row)">删除</Button>
           </template>
         </Table>
@@ -40,13 +39,6 @@
       @on-ok="onDel"
       :mask-closable="false">
       <p>您确认要删除该轮播？</p>
-    </Modal>
-    <Modal
-      title="克隆提示"
-      v-model="clone_model"
-      @on-ok="onClone"
-      :mask-closable="false">
-      <p>您确认要克隆该轮播？</p>
     </Modal>
   </div>
 </template>
@@ -123,10 +115,6 @@ export default {
       this.searchParams = params
       this.pageParams.page = 1
       this.fetchList()
-    },
-    onClone () {
-    },
-    onSwitchClone (item) {
     },
     onDel () {
     },

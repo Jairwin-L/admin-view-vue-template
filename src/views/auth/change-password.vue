@@ -2,7 +2,7 @@
   <div class="container">
     <Row class="change-box">
       <i-col span="24" class="main-item">
-        <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="90">
+        <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="100">
           <Form-item label="旧密码" prop="old_password">
             <Input type="password" v-model="formValidate.old_password" placeholder="请输入原始密码"/>
           </Form-item>

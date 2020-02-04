@@ -131,6 +131,7 @@ export default {
         return
       }
       console.log(this.model)
+      this.$router.push('./list')
     }
   }
 }

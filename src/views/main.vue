@@ -6,19 +6,19 @@
           <Submenu name="1">
             <template slot="title">
               <Icon type="ios-home-outline"/>
-              <span v-if="!isCollapsed">admin</span>
+              <span v-if="!isCollapsed">控制面板</span>
             </template>
-             <MenuItem to="/welcome" name="/welcome">
+             <MenuItem to="/main" name="/main">
               <span>欢迎</span>
             </MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
               <Icon type="ios-stats"/>
-              <span v-if="!isCollapsed">demo</span>
+              <span v-if="!isCollapsed">Form</span>
             </template>
-            <MenuItem to="/operation/banner/list" name="/operation/banner/list">
-              <span>demo01</span>
+            <MenuItem to="/operation/list" name="/operation/list">
+              <span>列表</span>
             </MenuItem>
           </Submenu>
         </Menu>
@@ -26,7 +26,12 @@
       </Sider>
       <Layout>
         <Header :style="{padding: 0}" class="page-header-bar">
-          <div>欢迎回来！
+          <div><Icon
+              @click.native="collapsedSider"
+              :style="{margin: '0 20px',cursor:'pointer'}"
+              type="md-menu"
+              size="24"
+            ></Icon>欢迎回来！
           </div>
           <Dropdown>
             <img src="@/assets/avatar.jpg" alt="默认头像"/>

@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import ViewUI from 'view-design'
 
-import Main from './views/index'
+import Home from './views/home'
 // 概况
-import Welcome from './views/welcome'
+import Main from './views/main'
 
 // 权限
 import Login from './views/login.vue'
@@ -13,9 +13,9 @@ import NoAuthority from './views/404/403.vue'
 import ChangePassword from './views/auth/change-password.vue'
 
 // 运营
-import Banner from './views/operation/banner/list.vue'
-import BannerEdit from './views/operation/banner/edit.vue'
-import BannerAdd from './views/operation/banner/add.vue'
+import Banner from './views/operation/list.vue'
+import BannerEdit from './views/operation/edit.vue'
+import BannerAdd from './views/operation/add.vue'
 
 Vue.use(ViewUI)
 
@@ -37,33 +37,23 @@ const routes = [
     name: 'ChangePassword'
   },
   {
-    path: '/operation/banner/list',
+    path: '/operation/list',
     component: Banner,
-    name: 'Banner',
-    meta: {
-      'auth': 'get:banners'
-    }
+    name: 'Banner'
   },
   {
-    path: '/operation/banner/edit/:id',
+    path: '/operation/edit/:id',
     component: BannerEdit,
-    name: 'BannerEdit',
-    meta: {
-      'auth': 'put:banners.{banner}'
-    }
+    name: 'BannerEdit'
   },
   {
-    path: '/operation/banner/add',
+    path: '/operation/add',
     component: BannerAdd,
-    name: 'BannerAdd',
-    meta: {
-      'auth': 'post:banners'
-    }
+    name: 'BannerAdd'
   },
   {
-    path: '/welcome',
-    component: Welcome,
-    name: 'Welcome'
+    path: '/main',
+    component: Home
   }
 ]
 
@@ -76,14 +66,8 @@ const router = new Router({
       component: Login
     },
     {
-      path: '/login',
-      component: Login,
-      name: 'Login'
-    },
-    {
       path: '/main',
       component: Main,
-      name: 'Main',
       children: routes
     },
     {
