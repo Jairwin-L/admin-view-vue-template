@@ -37,7 +37,7 @@
             <img src="@/assets/avatar.jpg" alt="默认头像"/>
             <Dropdown-menu slot="list">
               <Dropdown-item @click.native="$router.push('/auth/change-password')">修改密码</Dropdown-item>
-              <Dropdown-item @click.native="onLogout">退出登录</Dropdown-item>
+              <Dropdown-item @click.native="logoutFlag = true">退出登录</Dropdown-item>
             </Dropdown-menu>
           </Dropdown>
         </Header>
@@ -49,6 +49,15 @@
         </Content>
       </Layout>
     </Layout>
+    <Modal
+      v-model="logoutFlag"
+      title="提示"
+      @on-ok="onLogout"
+      :closable="false"
+      :mask-closable="false"
+      @on-cancel="logoutFlag = false">
+      <p>确认要退出嘛？</p>
+    </Modal>
   </div>
 </template>
 <script>
@@ -60,7 +69,8 @@ export default {
   data () {
     return {
       menus: [],
-      isCollapsed: false
+      isCollapsed: false,
+      logoutFlag: false
     }
   },
   methods: {

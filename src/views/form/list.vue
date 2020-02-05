@@ -2,7 +2,7 @@
   <div class="container">
     <search :searchParams="searchParams" @search="onSearch"></search>
     <div class="form-box">
-      <Button type="primary" size="small" :to="'add'">添加Banner</Button>
+      <Button type="primary" size="small" :to="'add'">添加</Button>
     </div>
     <Row class="table" v-if="list">
       <i-col span="24">

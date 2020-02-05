@@ -6,11 +6,11 @@
 
 <style lang="less" scoped>
 .auth {
-    margin: 15px;
-    background: #fff;
-    padding: 15px;
-    p {
-      color: #b24334;
-    }
+  margin: 15px;
+  background: #fff;
+  padding: 15px;
+  p {
+    color: #b24334;
+  }
 }
 </style>

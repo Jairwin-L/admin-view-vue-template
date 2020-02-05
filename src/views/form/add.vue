@@ -79,18 +79,6 @@ export default {
         {
           value: 'goods',
           label: '商品'
-        },
-        {
-          value: 'goods-zone',
-          label: '商品专区'
-        },
-        {
-          value: 'goods-search',
-          label: '商品搜索'
-        },
-        {
-          value: 'brand',
-          label: '品牌页'
         }
       ],
       showType: [
